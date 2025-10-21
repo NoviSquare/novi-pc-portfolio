@@ -6,42 +6,130 @@
     <title>Novi Bilgisayar Garajı – Özel PC Yapımı</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
    <style>
-    body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#0d0d0d; color:#fff; }
-    header { background:#1a1a1a; padding:50px 20px; text-align:center; }
-    header h1 { font-size:2.5rem; margin-bottom:10px; }
-    header p { font-size:1.2rem; color:#ccc; }
-    .cta-button { margin-top:20px; padding:15px 30px; background:#ff6600; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; }
-    section { padding:60px 20px; max-width:1200px; margin:0 auto; }
-    h2 { font-size:2rem; margin-bottom:30px; border-bottom:2px solid #ff6600; display:inline-block; padding-bottom:5px; }
-    .services, .gallery { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-    .card { background:#1a1a1a; padding:20px; border-radius:10px; flex:1 1 300px; }
-    .card img { width:100%; border-radius:10px; }
-    footer { background:#111; padding:40px 20px; text-align:center; color:#ccc; }
-    footer a { color:#ff6600; text-decoration:none; margin:0 10px; }
-    form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
-    input, textarea { padding:10px; border-radius:5px; border:none; font-size:1rem; }
-    button { padding:15px; background:#ff6600; color:#fff; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
+    body { 
+        font-family: 'Roboto', sans-serif; 
+        margin:0; 
+        padding:0; 
+        background:#0d0d0d; 
+        color:#e0e0e0; 
+    }
+
+    header { 
+        background:#1a1a1a; 
+        padding:50px 20px; 
+        text-align:center; 
+    }
+    header h1 { 
+        font-size:2.5rem; 
+        margin-bottom:10px; 
+        color:#fff;
+    }
+    header p { 
+        font-size:1.2rem; 
+        color:#aaa; 
+    }
+    .cta-button { 
+        margin-top:20px; 
+        padding:15px 30px; 
+        background:#0A84FF; 
+        color:#fff; 
+        text-decoration:none; 
+        font-weight:bold; 
+        border-radius:5px; 
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .cta-button:hover {
+        background:#3399FF;
+        transform: scale(1.05);
+    }
+
+    section { 
+        padding:60px 20px; 
+        max-width:1200px; 
+        margin:0 auto; 
+    }
+    h2 { 
+        font-size:2rem; 
+        margin-bottom:30px; 
+        border-bottom:2px solid #0A84FF; 
+        display:inline-block; 
+        padding-bottom:5px; 
+        color:#fff;
+    }
+    .services, .gallery { 
+        display:flex; 
+        flex-wrap:wrap; 
+        gap:20px; 
+        justify-content:center; 
+    }
+    .card { 
+        background:#1a1a1a; 
+        padding:20px; 
+        border-radius:10px; 
+        flex:1 1 300px; 
+        color:#e0e0e0;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(10, 132, 255, 0.4);
+    }
+    .card img { 
+        width:100%; 
+        border-radius:10px; 
+    }
+
+    footer { 
+        background:#111; 
+        padding:40px 20px; 
+        text-align:center; 
+        color:#aaa; 
+    }
+    footer a { 
+        color:#0A84FF; 
+        text-decoration:none; 
+        margin:0 10px; 
+    }
+    footer a:hover {
+        color:#3399FF;
+    }
+
+    form { 
+        display:flex; 
+        flex-direction:column; 
+        gap:15px; 
+        max-width:500px; 
+        margin:0 auto; 
+    }
+    input, textarea { 
+        padding:10px; 
+        border-radius:5px; 
+        border:none; 
+        font-size:1rem; 
+        background:#222; 
+        color:#e0e0e0;
+    }
+    input::placeholder, textarea::placeholder {
+        color:#888;
+    }
+    button { 
+        padding:15px; 
+        background:#0A84FF; 
+        color:#fff; 
+        border:none; 
+        border-radius:5px; 
+        font-weight:bold; 
+        cursor:pointer; 
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+    button:hover { 
+        background:#3399FF; 
+        transform: scale(1.05); 
+    }
 
     /* Smooth scrolling for anchor links */
     html {
         scroll-behavior: smooth;
-    }
-
-    /* Button hover animation */
-    button, .cta-button {
-        padding: 15px; 
-        background: #ff6600; 
-        color: #fff; 
-        border: none; 
-        border-radius: 5px; 
-        font-weight: bold; 
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.2s ease;
-    }
-
-    button:hover, .cta-button:hover {
-        background: #ff8533;  /* slightly brighter orange */
-        transform: scale(1.05);
     }
 </style>
 
@@ -104,7 +192,7 @@
 
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(event){
-    event.preventDefault(); // formun normal gönderimini durdur
+    event.preventDefault(); 
     const form = event.target;
     fetch(form.action, {
         method: form.method,
@@ -112,15 +200,14 @@ document.getElementById("contactForm").addEventListener("submit", function(event
         headers: { 'Accept': 'application/json' }
     }).then(response => {
         if (response.ok) {
-            document.getElementById("successMessage").style.display = "block"; // mesajı göster
-            form.reset(); // formu temizle
+            document.getElementById("successMessage").style.display = "block"; 
+            form.reset(); 
         } else {
             alert("Bir hata oluştu, lütfen tekrar deneyin.");
         }
     }).catch(() => alert("Bir hata oluştu, lütfen tekrar deneyin."));
 });
 </script>
-
 
 <footer>
     <p>© 2025 Özer Emre | Novi Bilgisayar Garajı</p>
@@ -133,10 +220,3 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
 </body>
 </html>
-
-
-
-
-
-
-
