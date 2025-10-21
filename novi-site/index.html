@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novi Bilgisayar Garajı – Özel PC Yapımı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin:0; padding:0; background:#0d0d0d; color:#fff; }
+        header { background:#1a1a1a; padding:50px 20px; text-align:center; }
+        header h1 { font-size:2.5rem; margin-bottom:10px; }
+        header p { font-size:1.2rem; color:#ccc; }
+        .cta-button { margin-top:20px; padding:15px 30px; background:#ff6600; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; }
+        section { padding:60px 20px; max-width:1200px; margin:0 auto; }
+        h2 { font-size:2rem; margin-bottom:30px; border-bottom:2px solid #ff6600; display:inline-block; padding-bottom:5px; }
+        .services, .gallery { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+        .card { background:#1a1a1a; padding:20px; border-radius:10px; flex:1 1 300px; }
+        .card img { width:100%; border-radius:10px; }
+        footer { background:#111; padding:40px 20px; text-align:center; color:#ccc; }
+        footer a { color:#ff6600; text-decoration:none; margin:0 10px; }
+        form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
+        input, textarea { padding:10px; border-radius:5px; border:none; font-size:1rem; }
+        button { padding:15px; background:#ff6600; color:#fff; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Novi Bilgisayar Garajı</h1>
+    <p>Performans ve Tasarım Odaklı Özel PC’ler</p>
+    <a href="#contact" class="cta-button">PC Talep Et</a>
+</header>
+
+<section id="about">
+    <h2>Hakkımda</h2>
+    <p>Ben Özer Emre, yüksek performanslı ve estetik PC sistemleri tasarlayan bir profesyonelim. Her sistem özenle seçilen parçalarla birleştirilir, test edilir ve maksimum performans için optimize edilir. İster oyun odaklı bir bilgisayar, ister profesyonel bir iş istasyonu isteyin, sisteminiz tam istediğiniz gibi hazırlanır.</p>
+</section>
+
+<section id="services">
+    <h2>Hizmetlerim</h2>
+    <div class="services">
+        <div class="card">
+            <h3>Özel Gaming PC</h3>
+            <p>İhtiyacınıza özel parçalar seçilir, yüksek FPS ve stabil performans garantisiyle kurulur.</p>
+        </div>
+        <div class="card">
+            <h3>İş İstasyonları</h3>
+            <p>Render, video düzenleme ve üretkenlik için optimize edilmiş sistemler.</p>
+        </div>
+        <div class="card">
+            <h3>Bileşen Danışmanlığı</h3>
+            <p>Doğru parçaları seçmenize ve sistem performansını artırmanıza yardımcı olurum.</p>
+        </div>
+        <div class="card">
+            <h3>Termal & Bakım</h3>
+            <p>Soğutma ve performans iyileştirmeleri ile sisteminizin ömrünü uzatırım.</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Önceki İşler</h2>
+    <div class="gallery">
+        <div class="card"><img src="images/build1.jpg" alt="Build 1"><p>RX 9060 XT + Ryzen 5 7600</p></div>
+        <div class="card"><img src="images/build2.jpg" alt="Build 2"><p>RX 7800 XT + Ryzen 7 9700X</p></div>
+        <div class="card"><img src="images/build3.jpg" alt="Build 3"><p>Custom Watercooling + RGB</p></div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>İletişim</h2>
+    <form>
+        <input type="text" placeholder="İsim" required>
+        <input type="email" placeholder="E-posta" required>
+        <textarea placeholder="Mesajınızı yazın" rows="5" required></textarea>
+        <button type="submit">Gönder</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2025 Özer Emre | Novi Bilgisayar Garajı</p>
+    <p>Sosyal Medya: 
+        <a href="#">Instagram</a> | 
+        <a href="#">YouTube</a> | 
+        <a href="#">Discord</a>
+    </p>
+</footer>
+
+</body>
+</html>
+
 
