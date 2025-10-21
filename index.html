@@ -69,13 +69,34 @@
 
 <section id="contact">
     <h2>İletişim</h2>
-     <form action="https://formspree.io/f/mzzjqwkn" method="POST">
-        <input type="text" placeholder="İsim" required>
-        <input type="email" placeholder="E-posta" required>
-        <textarea placeholder="Mesajınızı yazın" rows="5" required></textarea>
+    <form id="contactForm" action="https://formspree.io/f/mzzjqwkn" method="POST">
+        <input type="text" name="name" placeholder="İsim" required>
+        <input type="email" name="email" placeholder="E-posta" required>
+        <textarea name="message" placeholder="Mesajınızı yazın" rows="5" required></textarea>
         <button type="submit">Gönder</button>
     </form>
+    <p id="successMessage" style="display:none; color:#00ff00; margin-top:10px;">Gönderildi! Teşekkürler.</p>
 </section>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event){
+    event.preventDefault(); // formun normal gönderimini durdur
+    const form = event.target;
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+            document.getElementById("successMessage").style.display = "block"; // mesajı göster
+            form.reset(); // formu temizle
+        } else {
+            alert("Bir hata oluştu, lütfen tekrar deneyin.");
+        }
+    }).catch(() => alert("Bir hata oluştu, lütfen tekrar deneyin."));
+});
+</script>
+
 
 <footer>
     <p>© 2025 Özer Emre | Novi Bilgisayar Garajı</p>
@@ -88,6 +109,7 @@
 
 </body>
 </html>
+
 
 
 
