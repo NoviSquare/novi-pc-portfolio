@@ -21,8 +21,14 @@
         form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
         input, textarea { padding:10px; border-radius:5px; border:none; font-size:1rem; }
         button { padding:15px; background:#ff6600; color:#fff; border:none; border-radius:5px; font-weight:bold; cursor:pointer; }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
+  
 <body>
 
 <header>
@@ -109,6 +115,7 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
 </body>
 </html>
+
 
 
 
